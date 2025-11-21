@@ -1,0 +1,17 @@
+.DS_Store
+.vscode/
+.idea/
+.env
+node_modules/
+__pycache__/
+*.pyc
+*.log
+*.sqlite3
+/dist/
+/build/
+*.env
+Thumbs.db
+.venv/
+.env.local
+coverage/
+*.egg-info/

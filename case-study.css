@@ -1,0 +1,379 @@
+/* Case Study Specific Styles */
+
+/* Case Study Main Layout */
+.case-study-main {
+    padding-top: 5rem;
+}
+
+/* Hero Section */
+.case-study-hero {
+    padding: 4rem 0 6rem 0;
+}
+
+.case-study-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meta-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.meta-value {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.outcomes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.outcome {
+    font-size: 1rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+/* Case Study Sections */
+.case-study-section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.case-study-section:first-of-type {
+    border-top: none;
+}
+
+.section-content {
+    max-width: 800px;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.section-text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.section-text p {
+    margin-bottom: 1.5rem;
+}
+
+.goal-quote {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--text-primary);
+    border-left: 3px solid var(--text-secondary);
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+/* Design Objectives Grid */
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.objective-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(60px) saturate(200%);
+    -webkit-backdrop-filter: blur(60px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.objective-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.15) 0%, 
+                rgba(255, 255, 255, 0.08) 30%, 
+                rgba(255, 255, 255, 0.03) 70%,
+                rgba(255, 255, 255, 0.12) 100%);
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.objective-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.objective-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.objective-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* Images */
+.solution-image,
+.journey-image,
+.accessibility-image {
+    margin-top: 3rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.solution-image img,
+.journey-image img,
+.accessibility-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Demo Sections */
+.demo-section {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 24px;
+    margin: 2rem 0;
+    padding: 4rem 0;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.demo-item {
+    text-align: center;
+}
+
+.demo-video {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.demo-video img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.demo-info h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.demo-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* Single Demo Item */
+.demo-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.demo-video-large {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+}
+
+.demo-video-large img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.demo-info-large {
+    max-width: 500px;
+}
+
+.demo-info-large h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.demo-info-large p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.contact-cta {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.contact-cta:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Light Theme Adjustments */
+[data-theme="light"] .objective-card {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="light"] .objective-card::before {
+    background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.4) 0%, 
+                rgba(255, 255, 255, 0.25) 30%, 
+                rgba(255, 255, 255, 0.15) 70%,
+                rgba(255, 255, 255, 0.35) 100%);
+}
+
+[data-theme="light"] .demo-section {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .demo-video,
+[data-theme="light"] .demo-video-large {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] .contact-cta {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="light"] .contact-cta:hover {
+    background: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .case-study-hero {
+        padding: 2rem 0 4rem 0;
+    }
+    
+    .case-study-section {
+        padding: 3rem 0;
+    }
+    
+    .project-meta {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .objectives-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .demo-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .goal-quote {
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .demo-single {
+        margin-top: 2rem;
+    }
+    
+    .contact-section {
+        padding: 4rem 0;
+    }
+}
+
+/* Navigation fixes for case study */
+.case-study-main .navbar .nav-brand a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: all 0.3s ease;
+}
+
+.case-study-main .navbar .nav-brand a:hover {
+    opacity: 0.8;
+}
