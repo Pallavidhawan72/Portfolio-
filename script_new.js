@@ -496,80 +496,11 @@ class ThemeToggle {
     }
 }
 
-// Standalone timeline scroll animation function
-function initTimelineScrollAnimation() {
-    alert('Timeline function is running!');
-    console.log('🚀 Starting timeline animation initialization');
-    
-    const timelines = document.querySelectorAll('.timeline');
-    console.log('Found timelines:', timelines);
-    
-    if (!timelines || timelines.length === 0) {
-        alert('ERROR: No timeline elements found!');
-        console.log('❌ No timeline elements found');
-        return;
-    }
-    
-    alert('Found ' + timelines.length + ' timelines!');
-    console.log('✅ Found ' + timelines.length + ' timeline(s)');
-    
-    // Add animated ball to each timeline
-    timelines.forEach((timeline, index) => {
-        console.log('Adding ball to timeline #' + (index + 1));
-        
-        // Create the ball element
-        const ball = document.createElement('div');
-        ball.className = 'timeline-ball';
-        ball.style.cssText = `
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, #00ff88, #00ccff);
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.6), 0 0 40px rgba(0, 204, 255, 0.4);
-            z-index: 999;
-            opacity: 1;
-            pointer-events: none;
-            top: 0px;
-        `;
-        timeline.appendChild(ball);
-        alert('Ball #' + (index + 1) + ' added to page!');
-        console.log('✅ Ball #' + (index + 1) + ' created');
-        
-        // Simple scroll handler for this timeline
-        window.addEventListener('scroll', function() {
-            const timelineRect = timeline.getBoundingClientRect();
-            const timelineHeight = timeline.offsetHeight;
-            const windowHeight = window.innerHeight;
-            
-            // Calculate how much of timeline is visible
-            const visibleTop = Math.max(0, windowHeight - timelineRect.top);
-            const progress = Math.min(1, Math.max(0, visibleTop / timelineHeight));
-            
-            // Move ball
-            const newPosition = progress * timelineHeight;
-            ball.style.top = newPosition + 'px';
-            
-            if (index === 0) { // Only log for first timeline to avoid spam
-                console.log('SCROLL - Timeline ' + (index + 1) + ' Ball at: ' + newPosition.toFixed(0) + 'px (' + (progress * 100).toFixed(1) + '%)');
-            }
-        });
-    });
-    
-    alert('All scroll listeners attached! Scroll now!');
-    console.log('✅ All scroll listeners attached - try scrolling now!');
-}
-
-// Enhanced hover effects
+// Enhanced hover effects and initialization
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize theme toggle
+    // Initialize theme toggle (which sets up the custom cursor and timeline animation)
     new ThemeToggle();
-    
-    // Initialize timeline animation (standalone)
-    initTimelineScrollAnimation();
-    
+
     // Add hover effects to project cards
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {
@@ -731,44 +662,4 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
 });
-
-// Add CSS for ripple animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-    
-    .title-word {
-        display: inline-block;
-    }
-    
-    .highlight {
-        position: relative;
-    }
-    
-    .highlight::after {
-        content: '';
-        position: absolute;
-        bottom: 2px;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, #00ff88, #00ccff);
-        border-radius: 2px;
-        animation: glow 2s ease-in-out infinite alternate;
-    }
-    
-    @keyframes glow {
-        from {
-            box-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
-        }
-        to {
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.8), 0 0 25px rgba(0, 204, 255, 0.5);
-        }
-    }
-`;
-document.head.appendChild(style);
+            t.style.left = '50%';
